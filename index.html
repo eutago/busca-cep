@@ -10,18 +10,45 @@
     <div class="container">
       <div class="search-cep">
         <input type="text" id="inputSearch" class="input-search" />
-        <img src="./assets/images/search.svg" alt="icon search cep" />
+        <button id="buttonSearch" class="search-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="#ffffff"
+            stroke="#3b82f6"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-search"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </div>
-      <div>
-        <h3 class="cep-view">CEP: <span>37170-000</span></h3>
+      <div class="cep-container">
+        <h3 class="cep-view">CEP: <span id="cepNumber"></span></h3>
         <div class="cep-details">
-          <p>Cidade: <span>Boa Esperança</span></p>
-          <p>DDD: <span>35</span></p>
-          <p>Rua: <span>Ari Mesquita Reis</span></p>
-          <p>Bairro: <span>Jardim Nova Esperança</span></p>
-          <p>IBGE: <span>3107109</span></p>
+          <p>
+            Cidade: <span id="cepCity"></span> <span>/</span>
+            <span id="cepUf"></span>
+          </p>
+          <p>DDD: <span id="cepDdd"></span></p>
+          <p>Rua: <span id="cepAddress"></span></p>
+          <p>Bairro: <span id="cepNeighborhood"></span></p>
+          <p>IBGE: <span id="cepIbge"></span></p>
         </div>
       </div>
     </div>
+    <!----------- JQuery importation CDN ----------->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!----------- Javascript file importation ----------->
+    <script src="./assets/scripts/app.js"></script>
   </body>
 </html>
