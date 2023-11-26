@@ -1,0 +1,13 @@
+:root {
+  --text-dark: #000000;
+  --text-gray: #8a90a2;
+  --bg-blue600: #2563eb;
+  --bg-blue500: #3b82f6;
+  --bg-body: linear-gradient(
+    90deg,
+    var(--bg-blue500) 0%,
+    var(--bg-blue600) 100%
+  );
+  --bg-white: #ffffff;
+  --radius: 5px;
+}
