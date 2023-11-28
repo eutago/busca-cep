@@ -1,8 +1,18 @@
 const inputSearch = $("#inputSearch");
 const buttonSearch = $("#buttonSearch");
 
-buttonSearch.click(() => {
-  fetch(`https://viacep.com.br/ws/${inputSearch.val()}/json/`)
+buttonSearch.click((event) => {
+  event.preventDefault();
+
+  let zipCode = inputSearch.val();
+
+  zipCode = zipCode.replace(" ", "");
+  zipCode = zipCode.replace(".", "");
+  zipCode = zipCode.replace("-", "");
+  zipCode = zipCode.replace(" ", "");
+  zipCode = zipCode.trim();
+
+  fetch(`https://viacep.com.br/ws/${zipCode}/json/`)
     .then((response) => response.json())
     .then((data) => {
       $(".cep-container").css({ display: "flex" });
@@ -13,7 +23,6 @@ buttonSearch.click(() => {
       $("#cepDdd").html(data.ddd);
       $("#cepAddress").html(data.logradouro);
       $("#cepNeighborhood").html(data.bairro);
-      $("#cepIbge").html(data.ibge);
 
       inputSearch.val("");
     });
